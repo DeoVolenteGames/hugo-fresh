@@ -1,9 +1,9 @@
 $(document).ready(function(){
-    
+
     //Preloader
-    $(window).on('load', function() { // makes sure the whole site is loaded 
-        $('#status').fadeOut(); // will first fade out the loading animation 
-        $('#preloader').delay(350).fadeOut('slow'); // will fade out the white DIV that covers the website. 
+    $(window).on('load', function() { // makes sure the whole site is loaded
+        $('#status').fadeOut(); // will first fade out the loading animation
+        $('#preloader').delay(350).fadeOut('slow'); // will fade out the white DIV that covers the website.
         $('body').delay(350).css({'overflow':'visible'});
     })
 
@@ -48,14 +48,14 @@ $(document).ready(function(){
         });
     }
 
-    //Navbar Clone
-    if ($('#navbar-clone').length) {
+    //Navbar scrolling
+    if ($('nav.navbar').length) {
         $(window).scroll(function() {    // this will work when your window scrolled.
             var height = $(window).scrollTop();  //getting the scrolling height of window
-            if(height  > 50) {
-                $("#navbar-clone").addClass('is-active');
+            if(height > 50) {
+                $("nav.navbar").removeClass('top');
             } else{
-                $("#navbar-clone").removeClass('is-active');
+                $("nav.navbar").addClass('top');
             }
         });
     }
@@ -113,8 +113,8 @@ $(document).ready(function(){
         .click(function(event) {
         // On-page links
         if (
-            location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') 
-            && 
+            location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '')
+            &&
             location.hostname == this.hostname
         ) {
             // Figure out element to scroll to
