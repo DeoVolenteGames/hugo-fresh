@@ -24,4 +24,17 @@ Hero styles
     img.partner-logo {
         height: 70px;
     }
+    .tabs {
+        ul {
+            flex-wrap: wrap;
+            max-width: 100%;
+        }
+        a {
+            border-bottom: none;
+        }
+        li {
+            // Minimum of 3 elements wide
+            max-width: 33%;
+        }
+    }
 }
