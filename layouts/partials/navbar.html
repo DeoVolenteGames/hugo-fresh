@@ -26,6 +26,7 @@
 
       <div id="navbar-menu" class="navbar-menu is-static">
 
+        {{ with .Site.Params.sidebar }}
         <div class="navbar-start">
           <a class="navbar-item is-hidden-mobile">
             <div id="menu-icon-wrapper" class="menu-icon-wrapper" style="visibility: visible;">
@@ -38,6 +39,7 @@
             </div>
           </a>
         </div>
+        {{ end }}
 
         <div class="navbar-end">
           {{- range $navbar }}
