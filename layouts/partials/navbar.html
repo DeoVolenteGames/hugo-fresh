@@ -6,6 +6,7 @@
         <img src="{{ "/images/logos/fresh-alt.svg" | absURL }}" alt="" width="112" height="28">
       </a>
 
+      {{ with .Site.Params.sidebar }}
       <a class="navbar-item is-hidden-desktop is-hidden-tablet">
         <div id="menu-icon-wrapper" class="menu-icon-wrapper" style="visibility: visible;">
           <svg width="1000px" height="1000px">
@@ -16,6 +17,7 @@
           <button id="menu-icon-trigger" class="menu-icon-trigger"></button>
         </div>
       </a>
+      {{ end }}
 
       <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbar-menu">
         <span aria-hidden="true"></span>
