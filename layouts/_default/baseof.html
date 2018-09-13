@@ -11,21 +11,30 @@
       <div id="status"></div>
     </div>
 
-    {{ block "main" . }}
+    {{ partial "navbar.html" . }}
     {{ partial "hero.html" . }}
-    {{ partial "section1.html" . }}
-    {{ partial "section2.html" . }}
-    {{ partial "section3.html" . }}
-    {{ partial "section4.html" . }}
-    {{ partial "section5.html" . }}
-    {{ partial "footer.html" . }}
 
-    <!-- Back To Top Button -->
-    <div id="backtotop"><a href="#"></a></div>
-
-    {{ partial "sidebar.html" . }}
+    {{ range $i,$p := where .Pages.ByWeight "Section" "landing" }}
+      {{ $sectionStyle := cond (isset .Params "sectionstyle") .Params.sectionStyle (cond (modBool $i 2) "section-feature-grey" "")}}
+      <section id="{{ .File.TranslationBaseName }}" class="section {{ $sectionStyle }} is-medium">
+        <div class="container">
+          {{ if .Params.section }}
+            {{ .Render .Params.section }}
+          {{ else }}
+          <h2 class="title is-2">{{ .Title }}</h2>
+          <div class="content">
+            {{ .Content }}
+          </div>
+          {{ end }}
+        </div>
+      </section>
     {{ end }}
 
-    {{ partial "javascript.html" . }}
+    {{- partial "footer.html" . -}}
+    <div id="backtotop"><a href="#"></a></div>
+
+    {{- partial "sidebar.html" . -}}
+
+    {{- partial "javascript.html" . -}}
   </body>
 </html>
