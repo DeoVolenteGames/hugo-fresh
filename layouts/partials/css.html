@@ -1,5 +1,5 @@
 {{- $inServerMode := .Site.IsServer }}
-{{- $sass         := "style.sass" }}
+{{- $sass         := "style.scss" }}
 {{- $cssTarget    := "css/style.css" }}
 {{- $cssOpts      := cond ($inServerMode) (dict "targetPath" $cssTarget "enableSourceMap" true) (dict "targetPath" $cssTarget "outputStyle" "compressed") }}
 {{- $fontFace     := replace .Site.Params.font.name " " "+" }}
@@ -8,10 +8,10 @@
 <link rel="icon" type="image/png" href="{{ "/images/favicon.png" | absURL }}" />
 <link href="{{ $fontUrl }}" rel="stylesheet">
 {{- if $inServerMode }}
-{{- $css := resources.Get $sass | toCSS $cssOpts }}
+{{- $css := resources.Get $sass | resources.ExecuteAsTemplate "style.style.scss" . |toCSS $cssOpts }}
 <link rel="stylesheet" type="text/css" href="{{ $css.RelPermalink }}">
 {{- else }}
-{{- $css := resources.Get $sass | toCSS $cssOpts | minify | fingerprint }}
+{{- $css := resources.Get $sass | resources.ExecuteAsTemplate "style.style.scss" . | toCSS $cssOpts | minify | fingerprint }}
 <link rel="stylesheet" type="text/css" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
 {{- end }}
 <link rel="stylesheet" type="text/css" href="{{ "/css/icons.css" | absURL }}">

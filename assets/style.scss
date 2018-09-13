@@ -1,0 +1,6 @@
+$primary: {{ .Site.Params.color.primary | default "#4FC1EA" }};
+$secondary: {{ .Site.Params.color.secondary | default "#F39200" }};
+$accent: {{ .Site.Params.color.accent | default "#00efb7" }};
+
+@import "bulma/bulma";
+@import "fresh/core";

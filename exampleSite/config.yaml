@@ -7,6 +7,11 @@ params:
   font:
     name: "Open Sans"
     sizes: [400,600]
+  # Optional color customization
+  # color:
+  #   primary: "#4FC1EA"
+  #   secondary: "#F39200"
+  #   accent: "#00efb7"
   hero:
     # Main hero title
     title: Manage. Deploy.
