@@ -2,5 +2,25 @@ $primary: {{ .Site.Params.color.primary | default "#4FC1EA" }};
 $secondary: {{ .Site.Params.color.secondary | default "#F39200" }};
 $accent: {{ .Site.Params.color.accent | default "#00efb7" }};
 
-@import "bulma/bulma";
-@import "fresh/core";
+@import 'bulma/bulma';
+
+/* ==========================================================================
+Main Fresh SCSS
+========================================================================== */
+
+@import 'fresh/partials/colors';
+@import 'fresh/partials/navbar';
+@import 'fresh/partials/dropdowns';
+@import 'fresh/partials/sections';
+@import 'fresh/partials/hero';
+@import 'fresh/partials/footer';
+@import 'fresh/partials/buttons';
+@import 'fresh/partials/cards';
+@import 'fresh/partials/forms';
+@import 'fresh/partials/animations';
+@import 'fresh/partials/testimonials';
+@import 'fresh/partials/responsive';
+@import 'fresh/partials/utils';
+{{ if .Site.Params.sidebar }}
+@import 'fresh/partials/sidebar';
+{{ end }}
