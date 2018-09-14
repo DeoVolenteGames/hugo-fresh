@@ -26,13 +26,18 @@ params:
     buttonlink: "#"
     # Hero image (from /images/___)
     image: illustrations/worker.svg
-    # Footer logos (from /images/logos/clients/___.svg)
+    # Footer logos (from /images/logos/clients/___.svg) and urls
     clientlogos:
-    - systek
-    - tribe
-    - kromo
-    - infinite
-    - gutwork
+    - logo: systek
+      url: /#
+    - logo: tribe
+      url: /#
+    - logo: kromo
+      url: /#
+    - logo: infinite
+      url: /#
+    - logo: gutwork
+      url: /#
   # Customizable navbar. For a dropdown, add a "sublinks" list.
   navbar:
   - title: Features
