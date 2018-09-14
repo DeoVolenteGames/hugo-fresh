@@ -1,5 +1,5 @@
 {{ with .Site.Params.sidebar }}
-  {{- $logo := index . "logo" }}
+  {{- $logo := index . "logo" | default .Site.Params.logo }}
   <div class="sidebar">
     <div class="sidebar-header">
       <img src="{{ printf "/images/logos/%s.svg" .logo | relURL }}">

@@ -1,5 +1,5 @@
 {{- $footer       := .Site.Params.footer }}
-{{- $logo         := index $footer "logo" }}
+{{- $logo         := index $footer "logo" | default .Site.Params.logo }}
 {{- $productLinks := index $footer "product" }}
 {{- $docLinks     := index $footer "docs" }}
 {{- $blogrollLinks:= index $footer "blogroll" }}
@@ -10,7 +10,7 @@
     <div class="columns">
       <div class="column">
         <div class="footer-logo">
-          <img src="{{ printf "/images/logos/%s" $logo | relURL }}">
+          <img src="{{ printf "/images/logos/%s.svg" $logo | relURL }}">
         </div>
       </div>
       <div class="column">
@@ -77,7 +77,7 @@
 
             {{- if $bulmaLogo }}
             <a href="https://bulma.io" target="_blank">
-              <img src="{{ "/images/logos/made-with-bulma.png" | relURL }}" alt="Made with Bulma" width="128" height="24">
+              <img src="https://bulma.io/images/made-with-bulma--white.png" alt="Made with Bulma" width="128" height="24">
             </a>
             {{- end }}
           </div>

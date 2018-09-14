@@ -3,7 +3,7 @@
   <div class="container">
     <div class="navbar-brand">
       <a class="navbar-item" href="https://cssninja.io">
-        <img src="{{ "/images/logos/fresh-alt.svg" | absURL }}" alt="" width="112" height="28">
+        <img src="{{ printf "/images/logos/%s.svg" .Site.Params.logo | absURL }}" alt="" width="112" height="28">
       </a>
 
       {{ with .Site.Params.sidebar }}

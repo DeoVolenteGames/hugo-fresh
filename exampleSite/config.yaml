@@ -5,6 +5,8 @@ theme: hugo-fresh
 disableKinds: ["RSS"]
 
 params:
+  # TODO: Logo (from /images/logos/___.svg)
+  logo: fresh-alt
   font:
     name: "Open Sans"
     sizes: [400,600]
@@ -85,8 +87,8 @@ params:
       - text: App settings
         url: /
   footer:
-    # Logo (from /images/logos/___)
-    logo: fresh-white-alt.svg
+    # Logo (from /images/logos/___.svg)
+    logo: fresh-white-alt
     # Social media links (GitHub, Twitter, etc.). All are optional.
     socialmedia:
     - link: https://github.com/lucperkins/github-fresh
