@@ -23,6 +23,11 @@ Hero styles
 .hero-foot {
     img.partner-logo {
         height: 70px;
+        transition: filter 0.5s;
+        filter: grayscale(1);
+        &:hover {
+            filter: grayscale(0);
+        }
     }
     .tabs {
         ul {
