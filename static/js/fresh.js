@@ -1,4 +1,5 @@
 $(document).ready(function(){
+    scrollNav();
 
     //Preloader
     $(window).on('load', function() { // makes sure the whole site is loaded
@@ -50,14 +51,16 @@ $(document).ready(function(){
 
     //Navbar scrolling
     if ($('nav.navbar').length) {
-        $(window).scroll(function() {    // this will work when your window scrolled.
-            var height = $(window).scrollTop();  //getting the scrolling height of window
-            if(height > 50) {
-                $("nav.navbar").removeClass('top');
-            } else{
-                $("nav.navbar").addClass('top');
-            }
-        });
+        $(window).scroll(scrollNav);
+    }
+
+    function scrollNav() {    // this will work when your window scrolled.
+        var height = $(window).scrollTop();  //getting the scrolling height of window
+        if(height > 50) {
+            $("nav.navbar").removeClass('top');
+        } else{
+            $("nav.navbar").addClass('top');
+        }
     }
 
     //Init feather icons
