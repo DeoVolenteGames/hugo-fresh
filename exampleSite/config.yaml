@@ -5,7 +5,7 @@ theme: hugo-fresh
 disableKinds: ["RSS"]
 
 params:
-  # TODO: Logo (from /images/logos/___.svg)
+  # Logo (from /images/logos/___.svg)
   logo: fresh-alt
   font:
     name: "Open Sans"
