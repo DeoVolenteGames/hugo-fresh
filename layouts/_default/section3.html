@@ -14,7 +14,9 @@
 </div>
 
 <p class="has-text-centered mt-20">
-  <a class="button cta is-large rounded secondary-btn raised" href="{{ .Params.buttonUrl }}">
+  <a {{ with .Params.buttonURL }}href={{ . }} {{ end -}}
+     {{ with .Params.target }}data-target={{ . }} {{ end -}}
+     class="button cta is-large rounded secondary-btn raised{{ with .Params.buttonClass }} {{ . }}{{ end }}">
     {{ .Params.buttonText }}
   </a>
 </p>

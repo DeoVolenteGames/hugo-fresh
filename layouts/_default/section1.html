@@ -21,7 +21,9 @@
             <p>{{ .text }}</p>
         </div>
         <div class="card-action">
-          <a href="{{ .url }}" class="button btn-align-md accent-btn raised">{{ .buttonText }}</a>
+          <a {{ with .url }}href={{ . }} {{ end -}}
+             {{ with .target }}data-target={{ . }} {{ end -}}
+             class="button btn-align-md accent-btn raised{{ with .class }} {{ . }}{{ end }}">{{ .buttonText }}</a>
         </div>
       </div>
     </div>

@@ -7,16 +7,16 @@ tiles:
 - title: App builder
   icon: mouse-globe
   text: This is some explanatory text that is on two rows
-  url: /
   buttonText: Free trial
+  buttonURL: "#"
 - title: Cloud integration
   icon: laptop-cloud
   text: This is some explanatory text that is on two rows
-  url: /
   buttonText: Get started
+  buttonURL: "#"
 - title: Add-ons & plugins
   icon: plug-cloud
   text: This is some explanatory text that is on two rows
-  url: /
   buttonText: Get started
+  buttonURL: "#"
 ---
