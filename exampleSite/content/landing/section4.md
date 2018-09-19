@@ -2,6 +2,7 @@
 section: section4
 weight: 40
 sectionStyle: section-secondary
+textStyle: light-text
 title: Our Clients love us!
 subtitle: Lorem ipsum sit dolor amet is a dummy text used by typography industry
 clients:

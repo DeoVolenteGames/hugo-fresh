@@ -1,7 +1,10 @@
+{{- $textStyle := .Params.textStyle }}
 <div class="title-wrapper has-text-centered">
-  <h2 class="title is-2 light-text is-spaced">{{ .Title }}</h2>
-  {{ with .Params.subtitle }}
-  <h3 class="subtitle is-5 light-text">{{ . }}</h3>
+  <h2 class="title is-2 is-spaced {{ with $textStyle }}{{ . }}{{ end }}">{{ .Title }}</h2>
+  {{ if isset .Params "subtitle" }}
+  <h3 class="subtitle is-5 {{ with $textStyle }}{{ . }}{{ else }}is-muted{{ end }}">
+    {{- .Params.subtitle -}}
+  </h3>
   {{ end }}
 </div>
 
@@ -16,7 +19,7 @@
         <div class="author">
           <img src="{{ printf "/images/illustrations/faces/%s.png" (string .img) | relURL }}" alt=""/>
           <h5>{{ .name }}</h5>
-          <span>{{ .job }}</span>
+          <span {{ with $textStyle }}class="{{ . }}"{{ end }}>{{ .job }}</span>
         </div>
       </figure>
     </div>
