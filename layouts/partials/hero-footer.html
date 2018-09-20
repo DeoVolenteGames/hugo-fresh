@@ -5,9 +5,9 @@
       <ul>
         {{- range . }}
         <li>
-          <a {{ with .url}}href="{{ . }}"{{ end }}>
+          {{ with .url }}<a href="{{ . }}">{{ end }}
             <img class="partner-logo" src="{{ printf "/images/logos/clients/%s.svg" .logo | relURL }}">
-          </a>
+            {{ if .url }}</a>{{ end }}
         </li>
         {{- end }}
       </ul>
