@@ -5,7 +5,7 @@
       <ul>
         {{- range . }}
         <li>
-          {{ with .url }}<a href="{{ . }}">{{ end }}
+          {{ with .url }}<a href="{{ . }}"{{ if not (findRE "^/#" .) }} target="_blank"{{ end }}>{{ end }}
             <img class="partner-logo" src="{{ printf "/images/logos/clients/%s.svg" .logo | relURL }}">
             {{ if .url }}</a>{{ end }}
         </li>
