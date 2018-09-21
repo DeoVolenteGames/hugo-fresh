@@ -7,13 +7,13 @@ Cards and Card content styles
 // Feature Card
 .feature-card {
     width: 300px;
-    height: 320px;
+    min-height: 320px;
     background-color: #fff;
     border-radius: 3px;
     margin: 0 auto;
+    padding: 25px;
     .card-title h4 {
         font-family: 'Open Sans', sans-serif;
-        padding-top: 25px;
         font-size: 1.2rem;
         font-weight: 600;
         color: $blue-grey;
@@ -23,10 +23,8 @@ Cards and Card content styles
         margin-top: 20px;
     }
     .card-text {
-        padding: 0 40px;
-        p {
-            color: $muted-grey;
-        }
+        padding: 0 15px;
+        color: $muted-grey;
     }
     .card-action {
         margin-top: 10px;
@@ -72,7 +70,7 @@ Cards and Card content styles
             }
             ul li a {
                 color: $grey-white;
-            }  
+            }
             ul li.is-active a {
                 color: $white;
                 border: 1px solid $white;
@@ -80,5 +78,4 @@ Cards and Card content styles
             }
         }
     }
-
 }
