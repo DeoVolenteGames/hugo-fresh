@@ -94,7 +94,6 @@ params:
   footer:
     # Logo (from /images/logos/___.svg)
     - logo: fresh-white-alt
-    # Social media links (GitHub, Twitter, etc.). All are optional.
     - title: Product
       links:
       - text: Discover features
@@ -126,6 +125,7 @@ params:
       - text: Video blog
         link: /
     - title: Follow Us
+      # Social media links (GitHub, Twitter, etc.). All are optional.
       social:
       - link: https://github.com/lucperkins/github-fresh
         # Icons are from Font Awesome
