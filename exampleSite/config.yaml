@@ -93,45 +93,62 @@ params:
         url: /
   footer:
     # Logo (from /images/logos/___.svg)
-    logo: fresh-white-alt
+    - logo: fresh-white-alt
     # Social media links (GitHub, Twitter, etc.). All are optional.
-    socialmedia:
-    - link: https://github.com/lucperkins/github-fresh
-      # Icons are from Font Awesome
-      icon: github
-    - link: https://dribbble.com/#
-      icon: dribbble
-    - link: https://facebook.com/#
-      icon: facebook
-    - link: https://twitter.com/lucperkins
-      icon: twitter
-    - link: https://bitbucket.org/#
-      icon: bitbucket
-    bulmalogo: true
-    product:
-    - text: Discover features
-      link: /
-    - text: Why choose our product?
-      link: /
-    - text: Compare features
-      link: /
-    - text: Our roadmap
-      link: /
-    - text: Request features
-      link: /
-    docs:
-    - text: Get started
-      link: /
-    - text: User guides
-      link: /
-    - text: Admin guide
-      link: /
-    - text: Developers
-      link: /
-    blogroll:
-    - text: Latest news
-      link: /
-    - text: Tech articles
-      link: /
-    - text: Video blog
-      link: /
+    - title: Product
+      links:
+      - text: Discover features
+        link: /
+      - text: Why choose our Product?
+        link: /
+      - text: Compare features
+        link: /
+      - text: Our Roadmap
+        link: /
+      - text: Request features
+        link: /
+    - title: Docs
+      links:
+      - text: Get started
+        link: /
+      - text: User guides
+        link: /
+      - text: Admin guide
+        link: /
+      - text: Developers
+        link: /
+    - title: blogroll
+      links:
+      - text: Latest news
+        link: /
+      - text: Tech articles
+        link: /
+      - text: Video blog
+        link: /
+    - title: Follow Us
+      social:
+      - link: https://github.com/lucperkins/github-fresh
+        # Icons are from Font Awesome
+        icon: github
+      - link: https://dribbble.com/#
+        icon: dribbble
+      - link: https://facebook.com/#
+        icon: facebook
+      - link: https://twitter.com/lucperkins
+        icon: twitter
+      - link: https://bitbucket.org/#
+        icon: bitbucket
+      bulmalogo: true
+    # You can also use markdown
+    # - |
+    #   <div class="footer-header">
+    #     <h3>Markdown</h3>
+    #   </div>
+
+    #   [Here's a link](#)
+
+    #   ![Here's an image](images/logos/fresh.svg)
+
+    #   ---
+
+    #   This is ~~just~~ **some** _text_.

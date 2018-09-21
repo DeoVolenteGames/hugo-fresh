@@ -14,7 +14,22 @@ footer.footer-dark {
         }
     }
     .footer-column {
+        color: $light-blue-grey;
+        a {
+            color: $light-blue-grey;
+            transition: all 0.5s;
+            &:hover {
+                color: $smoke-white;
+            }
+        }
+        p {
+            margin-bottom: 1rem;
+        }
+        hr {
+            background-color: $light-blue-grey;
+        }
         .footer-header h3 {
+            color: $white;
             font-weight:500;
             font-size: 1.2rem;
             text-transform: uppercase;
@@ -24,14 +39,6 @@ footer.footer-dark {
         ul.link-list {
             line-height: 40px;
             font-size: 1.1rem;
-            a {
-                color: $light-blue-grey;
-                font-weight: 400;
-                transition: all 0.5s;
-            }
-            :hover {
-                color: $smoke-white;
-            }
         }
         .level-item .icon {
             color: $secondary;

@@ -1,88 +1,54 @@
-{{- $footer       := .Site.Params.footer }}
-{{- $logo         := index $footer "logo" | default .Site.Params.logo }}
-{{- $productLinks := index $footer "product" }}
-{{- $docLinks     := index $footer "docs" }}
-{{- $blogrollLinks:= index $footer "blogroll" }}
-{{- $socialMedia  := index $footer "socialmedia" }}
-{{- $bulmaLogo    := index $footer "bulmalogo" }}
 <footer class="footer footer-dark">
   <div class="container">
     <div class="columns">
+      {{- range .Site.Params.footer }}
       <div class="column">
+        {{- if eq (printf "%T" .) "string" }}
+        <div class="footer-column">
+          {{ markdownify . }}
+        </div>
+        {{- else if .logo }}
         <div class="footer-logo">
-          <img src="{{ printf "/images/logos/%s.svg" $logo | relURL }}">
+          <img src="{{ printf "/images/logos/%s.svg" .logo | relURL }}">
         </div>
-      </div>
-      <div class="column">
+        {{- else }}
         <div class="footer-column">
+          {{- if (or .title .social .bulmalogo) }}
           <div class="footer-header">
-              <h3>Product</h3>
-          </div>
-          <ul class="link-list">
-            {{- range $productLinks }}
-            <li>
-              <a href="{{ .link }}">
-                {{ .text }}
-              </a>
-            </li>
-            {{- end }}
-          </ul>
-        </div>
-      </div>
-      <div class="column">
-        <div class="footer-column">
-          <div class="footer-header">
-            <h3>Docs</h3>
-          </div>
-          <ul class="link-list">
-            {{- range $docLinks }}
-            <li>
-              <a href="{{ .link }}">
-                {{ .text }}
-              </a>
-            </li>
-            {{- end }}
-          </ul>
-        </div>
-      </div>
-      <div class="column">
-        <div class="footer-column">
-          <div class="footer-header">
-            <h3>Blogroll</h3>
-          </div>
-          <ul class="link-list">
-            {{- range $blogrollLinks }}
-            <li>
-              <a href="{{ .link }}">
-                {{ .text }}
-              </a>
-            </li>
-            {{- end }}
-          </ul>
-        </div>
-      </div>
-      <div class="column">
-        <div class="footer-column">
-          <div class="footer-header">
-            <h3>Follow Us</h3>
+            {{- with .title }}<h3>{{ . }}</h3>{{ end }}
+            {{- with .social }}
             <nav class="level is-mobile">
               <div class="level-left">
-                {{- range $socialMedia }}
+                {{- range . }}
                 <a class="level-item" href="{{ .link }}">
                   <span class="icon"><i class="fa fa-{{ .icon }}"></i></span>
                 </a>
                 {{- end }}
               </div>
             </nav>
-
-            {{- if $bulmaLogo }}
+            {{- end }}
+            {{- if .bulmalogo }}
             <a href="https://bulma.io" target="_blank">
               <img src="https://bulma.io/images/made-with-bulma--white.png" alt="Made with Bulma" width="128" height="24">
             </a>
             {{- end }}
           </div>
+          {{- end }}
+          {{- with .links }}
+          <ul class="link-list">
+            {{- range . }}
+            <li>
+              <a href="{{ .link }}">
+                {{ .text }}
+              </a>
+            </li>
+            {{- end }}
+          </ul>
+          {{- end }}
         </div>
+        {{- end }}
       </div>
+      {{- end }}
     </div>
   </div>
 </footer>
