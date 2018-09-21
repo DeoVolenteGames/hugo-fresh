@@ -30,3 +30,7 @@ Main Fresh SCSS
 {{ if .Site.Params.sidebar }}
 @import 'fresh/partials/sidebar';
 {{ end }}
+
+{{ if (fileExists "assets/custom.scss") }}
+@import 'custom';
+{{ end }}
