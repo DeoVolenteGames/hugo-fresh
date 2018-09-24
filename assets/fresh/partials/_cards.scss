@@ -18,7 +18,7 @@ Cards and Card content styles
         font-weight: 600;
         color: $blue-grey;
     }
-    .card-icon img {
+    .card-icon img, .card-icon svg {
         height: 120px;
         margin-top: 20px;
     }

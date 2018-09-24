@@ -17,8 +17,8 @@
         <div class="card-title">
           <h4>{{ .title }}</h4>
         </div>
-        <div class="card-icon">
-            <img src="{{ printf "/images/illustrations/icons/%s.svg" .icon | relURL }}">
+        <div class="card-icon image">
+          {{ printf "/static/images/illustrations/icons/%s.svg" .icon | readFile | safeHTML }}
         </div>
         <div class="card-text">
             <p>{{ .text }}</p>

@@ -23,9 +23,10 @@ Navbar
     //Brand
     .navbar-brand {
         min-height: 4rem;
-        img {
+        img, svg {
             max-height: 36px !important;
             height: 36px;
+            width: auto;
         }
         //Removing navbar item default hover behaviour
         &:hover {

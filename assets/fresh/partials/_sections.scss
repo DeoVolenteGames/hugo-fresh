@@ -83,3 +83,9 @@ img.pushed-image {
         }
     }
 }
+
+//Inline SVGs
+.image svg {
+    height: 120px;
+    width: 120px;
+}

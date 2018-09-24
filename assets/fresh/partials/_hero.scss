@@ -18,6 +18,15 @@ Hero styles
             color: $muted-grey;
         }
     }
+    .image {
+        height: 500px;
+        width: 500px;
+        padding-top: 0;
+        svg {
+            height: 100%;
+            width: 100%;
+        }
+    }
 }
 
 .hero-foot {
