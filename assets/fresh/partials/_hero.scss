@@ -19,12 +19,13 @@ Hero styles
         }
     }
     .image {
-        height: 500px;
-        width: 500px;
-        padding-top: 0;
         svg {
+            top: 0;
+            height: 500px;
+            width: 500px;
             height: 100%;
             width: 100%;
+            position: absolute;
         }
     }
 }

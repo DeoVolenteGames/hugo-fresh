@@ -14,7 +14,7 @@
     <article class="media icon-box">
       <figure class="media-left">
         <p class="image">
-          {{ printf "/static/images/illustrations/icons/%s.svg" .icon | readFile | safeHTML }}
+          {{ partial "svg.html" (printf "illustrations/icons/%s.svg" .icon) }}
         </p>
       </figure>
       <div class="media-content mt-50">

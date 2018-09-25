@@ -1,0 +1,5 @@
+{{- $image := printf "/static/images/%s" . }}
+{{- if not (fileExists $image) }}
+{{- $image = printf "/themes/hugo-fresh%s" $image}}
+{{- end }}
+{{ readFile $image | safeHTML }}
