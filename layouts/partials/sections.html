@@ -1,15 +1,15 @@
-{{ range $i,$p := where .Pages.ByWeight "Section" "landing" }}
+{{ range $i,$p := where .Site.Pages "Section" "landing" }}
 {{- $sectionStyle := cond (isset .Params "sectionstyle") .Params.sectionStyle (cond (modBool $i 2) "section-feature-grey" "")}}
 <section id="{{ .File.TranslationBaseName }}" class="section {{ $sectionStyle }} is-medium">
     <div class="container">
-    {{ if .Params.section }}
+        {{ if .Params.section }}
         {{ .Render .Params.section }}
-    {{ else }}
-    <h2 class="title is-2">{{ .Title }}</h2>
-    <div class="content">
-        {{ .Content }}
-    </div>
-    {{ end }}
+        {{ else }}
+        <h2 class="title is-2">{{ .Title }}</h2>
+        <div class="content">
+            {{ .Content }}
+        </div>
+        {{ end }}
     </div>
 </section>
 {{ end }}
