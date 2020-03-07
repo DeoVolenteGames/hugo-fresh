@@ -2,7 +2,14 @@ baseURL: http://something-fresh.org/
 languageCode: en-us
 title: Hugo Fresh Theme
 theme: hugo-fresh
-disableKinds: ["RSS"]
+disableKinds:
+  - RSS
+  - taxonomy
+  - taxonomyTerm
+markup:
+  goldmark:
+    renderer:
+      unsafe: true # Allows you to write raw html in your md files
 
 params:
   # Logo (from /images/logos/___.svg)
@@ -144,11 +151,11 @@ params:
     #   <div class="footer-header">
     #     <h3>Markdown</h3>
     #   </div>
-
+    #
     #   [Here's a link](#)
-
+    #
     #   ![Here's an image](images/logos/fresh.svg)
-
+    #
     #   ---
-
+    #
     #   This is ~~just~~ **some** _text_.
